@@ -1,11 +1,22 @@
+import json
+
 # We import Flask
 from flask import Flask
+from flask import render_template
+from flask_bootstrap import Bootstrap
+
     
 # We create a Flask app
 app = Flask(__name__)
 
+
+
 # We establish a Flask route so that we can serve HTTP traffic on that route 
-@app.route('/weather/<date>')
+@app.route('/<name>')
+def main(name=None):
+  gotyourname = name
+  return render_template('index.html', name=gotyourname)
+@app.route('/api/weather/<date>')
 def weather(date):
         # Additionally, we're now loading the JSON file's data into file_data 
     # every time a request is made to this endpoint# We hardcode some information to be returned

@@ -1,0 +1,10 @@
+<!doctype html>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+{% block title %} Hey, you, this is a title {% endblock%}
+{% if name %}
+  <h1> This is only here when you have a NAME, {{name}}.. </h1>
+{% else %}
+  <h1>This is only here when you DO NOT have a name...</h1>
+{% endif %}
